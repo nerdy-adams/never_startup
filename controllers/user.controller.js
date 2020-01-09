@@ -1,0 +1,1 @@
+exports.registerAndLoginForm = (req, res) => res.render('./client/user'); 

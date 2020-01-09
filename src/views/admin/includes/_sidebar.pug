@@ -1,0 +1,84 @@
+.app-sidebar__overlay(data-toggle="sidebar")
+aside.app-sidebar
+	.app-sidebar__company
+		img.app-sidebar__company-avatar(src='public/img/logo.png', alt='User Image')
+		div
+			p.app-sidebar__company-name Catus 
+			p.app-sidebar__company-designation Web Software 
+	ul.app-menu
+		li
+			a.app-menu__item(href='index.html' class={'active': activePage == 'dashboard'})
+				i.app-menu__icon.fa.fa-dashboard
+				span.app-menu__label 대쉬보드 
+		li.treeview(class={'is-expanded': activeGroup == 'users'})
+			a.app-menu__item(href='#' data-toggle='treeview')
+				i.app-menu__icon.fa.fa-user
+				span.app-menu__label 회원관리 
+				i.treeview-indicator.fa.fa-angle-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'user-list'})
+						i.icon.fa.fa-minus
+						|  회원목록 
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'user-level'})
+						i.icon.fa.fa-minus
+						|  회원레벨관리 
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'form-samples'})
+						i.icon.fa.fa-minus
+						|  IP 및 Login 차단 
+		li.treeview(class={'is-expanded': activeGroup == 'board'})
+			a.app-menu__item(href='#' data-toggle='treeview')
+				i.app-menu__icon.fa.fa-edit
+				span.app-menu__label 게시판관리 
+				i.treeview-indicator.fa.fa-angle-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'board-list'})
+						i.icon.fa.fa-minus
+						|  게시판목록 
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'board-register'})
+						i.icon.fa.fa-minus
+						|  게시판등록
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'category-list'})
+						i.icon.fa.fa-minus
+						|  카테고리목록 
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'category-register'})
+						i.icon.fa.fa-minus
+						|  카테고리등록 
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'category-register'})
+						i.icon.fa.fa-minus
+						|  게시판 세부관리 
+		li.treeview(class={'is-expanded': activeGroup == 'pages'})
+			a.app-menu__item(href='#' data-toggle='treeview')
+				i.app-menu__icon.fa.fa-file-text
+				span.app-menu__label 페이지 바로가기 
+				i.treeview-indicator.fa.fa-angle-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='#')
+						i.icon.fa.fa-minus
+						|  메인 페이지
+				li
+					a.treeview-item(href='#')
+						i.icon.fa.fa-minus
+						|  게시판 페이지
+				li
+					a.treeview-item(href='page-login.html')
+						i.icon.fa.fa-minus
+						|  로그인 페이지
+		li.treeview(class={'is-expanded': activeGroup == 'popupBanner'})
+			a.app-menu__item(href='#' data-toggle='treeview')
+				i.app-menu__icon.fa.fa-cog
+				span.app-menu__label 팝업 및 배너관리 
+				i.treeview-indicator.fa.fa-angle-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'board-list'})
+						i.icon.fa.fa-minus
+						|  공지사항 등록 

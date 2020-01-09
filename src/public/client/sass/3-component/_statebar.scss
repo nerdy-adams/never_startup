@@ -1,0 +1,11 @@
+.statebar-wrap {
+  width: 100%; 
+  background-color: #efefef;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 3vw 5px 0;
+  .btn {
+    margin: 0 2.5px;
+    box-shadow: 1px 1px 3px #ccc;
+  }
+}

@@ -1,0 +1,69 @@
+extends template/_layout.pug
+block title
+  title :: 스타트업쿠 커뮤니티 :: 
+block append cdn
+block append css
+block append script
+block append header
+block main
+  header
+  nav
+  section
+    header
+    article
+      if !board
+        form(action='/board/register' method='POST' enctype='multipart/form-data')
+          div
+            span 카테고리 
+            select(name='bdCate')
+              option(value='#') ::: 선택 :::
+              option(value='1') Category1
+              option(value='2') Category2
+          div
+            span 제목
+            input(type='text' name='bdTitle'  )
+          div
+            span 작성자
+            input(type='text' name='bdAuthor')
+          div
+            span 내용
+            textarea(name='bdContent')
+          div
+            span 이미지
+            input(type='file' name='bdImage')
+          div
+            span 이미지
+            input(type='file' name='bdImage')
+          div
+            span 이미지
+            input(type='file' name='bdImage')
+          div
+            span 이미지
+            input(type='file' name='bdFile')
+          div
+            input(type='submit' value='작성' )
+      else if board
+        form(action=`/board/${board._id}/modify` method='POST')
+          div
+            span 카테고리 
+            select(name='bdCate')
+              option(value='#') ::: 선택 :::
+              option(value='1') Category1
+              option(value='2') Category2
+          div
+            span 제목
+            input(type='text' name='bdTitle' value= board.bdTitle)
+          div
+            span 작성자
+            input(type='text' name='bdAuthor' value= board.bdAuthor readonly)
+          div
+            span 내용
+            textarea(name='bdContent')= board.bdContent
+          div
+            span 이미지
+            input(type='file' name='bdImage')
+          div
+            input(type='submit' value='수정' )
+    footer
+      div
+        a(href='/board/1') list로

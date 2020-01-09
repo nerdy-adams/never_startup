@@ -1,0 +1,11 @@
+// ---------------- //
+// ---- Fonts  ---- //
+// ---------------- //
+
+// Font
+@mixin font-size($size:true , $selector:false) {
+  @if  $size {
+    @if   $selector { #{$selector} { font-size : #{$size} !important; }}
+    @else           { font-size : #{$size} !important; } 
+  }
+}

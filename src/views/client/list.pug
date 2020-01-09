@@ -1,0 +1,30 @@
+extends template/_layout.pug
+block title
+  title :: 스타트업쿠 커뮤니티 :: 
+block append cdn
+block append css
+block append script
+block append header
+block main
+  style.
+    ul{ list-style: none }
+    article span{ border: solid 1px black; margin: 3px 0; padding: 0 177px;}
+  section
+    header
+      h1 Board List
+    article
+        ul
+          li
+            span 순서
+            span 제목
+            span 작성자
+            span 작성일
+          each board, index in boardList
+            li
+              span= index+1
+              a(href=`/board/${board._id}`)
+                span= board.bdTitle
+              span= board.bdAuthor
+              span= board.bdAddDate
+    footer
+      a(href=`/board/add`) 작성

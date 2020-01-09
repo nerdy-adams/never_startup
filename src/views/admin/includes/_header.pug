@@ -1,0 +1,71 @@
+header.app-header
+	a.app-header__logo(href='index.html') Catus
+
+	// Sidebar toggle button
+	a.app-sidebar__toggle(href='#', data-toggle='sidebar')
+
+	// Navbar Right Menu
+	ul.app-nav
+
+		li.app-search
+			input.app-search__input(type="search", placeholder="검색")
+			button.app-search__button: i.fa.fa-search
+
+		//Notification Menu
+		li.dropdown
+			a.app-nav__item(href='#', data-toggle='dropdown')
+				i.fa.fa-bell-o.fa-lg
+			ul.app-notification.dropdown-menu.dropdown-menu-right
+				li.app-notification__title 새로운 알림 {alert count}개 있습니다.
+				.app-notification__content
+					//- 알림 데이터 값을 출력(반복출력)
+					li
+						a.app-notification__item(href='javascript:;')
+							span.app-notification__icon
+								span.fa-stack.fa-lg
+									i.fa.fa-circle.fa-stack-2x.text-primary
+									//- i 태그 class 값 알림에 종류에 따라 추가 
+									i.fa.fa-envelope.fa-stack-1x.fa-inverse
+							div
+								p.app-notification__message {user name}의 메일
+								p.app-notification__meta {alert time} ago 
+					li
+						a.app-notification__item(href='javascript:;')
+							span.app-notification__icon
+								span.fa-stack.fa-lg
+									i.fa.fa-circle.fa-stack-2x.text-primary
+									//- i 태그 class 값 알림에 종류에 따라 추가 
+									i.fa.fa-envelope.fa-stack-1x.fa-inverse
+							div
+								p.app-notification__message {user name}의 메일
+								p.app-notification__meta {alert time} ago 
+									i.fa.fa-hdd-o.fa-stack-1x.fa-inverse
+					li
+						a.app-notification__item(href='javascript:;')
+							span.app-notification__icon
+								span.fa-stack.fa-lg
+									i.fa.fa-circle.fa-stack-2x.text-danger
+									//- i 태그 class 값 알림에 종류에 따라 추가 
+									i.fa.fa-registered.fa-stack-1x.fa-inverse
+							div
+								p.app-notification__message {user id}의 회원가입 
+								p.app-notification__meta {alert time} ago
+				li.app-notification__footer
+					a(href='#') 모든 알림 지우기
+		// User Menu
+		li.dropdown
+			a.app-nav__item(href='#', data-toggle='dropdown')
+				i.fa.fa-user.fa-lg
+			ul.dropdown-menu.settings-menu.dropdown-menu-right
+				li
+					a.dropdown-item(href='page-user.html')
+						i.fa.fa-cog.fa-lg
+						|	환경설정 
+				li
+					a.dropdown-item(href='page-user.html')
+						i.fa.fa-user.fa-lg
+						|	프로필 
+				li
+					a.dropdown-item(href='page-login.html')
+						i.fa.fa-sign-out.fa-lg
+						|	로그아웃 

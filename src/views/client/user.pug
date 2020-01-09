@@ -1,0 +1,67 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		// Main CSS
+		link(rel='stylesheet', type='text/css', href='/public/css/admin.css')
+		// Font-icon css
+		link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+		title 로그인페이지 
+	body
+		section.material-half-bg
+			.cover
+		section.login-content
+			.logo: h1 Never Startup 
+			.login-box
+				form.login-form(action="/auth/login" method="post")
+					h3.login-head
+						i.fa.fa-lg.fa-fw.fa-user
+						| Login 
+					.form-group
+						label.control-label 이메일 
+						input.form-control(type="text", name="email", placeholder="Email", autofocus)
+					.form-group
+						label.control-label 비밀번호 
+						input.form-control(type="password", name="pw", placeholder="Password")
+					.form-group
+						.utility
+							.animated-checkbox
+								label
+									input(type="checkbox")
+									span.label-text 이메일 저장 
+							p.semibold-text.mb-2
+								a(href="#" data-toggle="flip") 회원가입 
+					.form-group.btn-container
+						button.btn.btn-primary.btn-block
+							i.fa.fa-sign-in.fa-lg.fa-fw
+							| 로그인 
+				form.forget-form(action="/auth/register" method="post")
+					h3.login-head
+						i.fa.fa-lg.fa-fw.fa-lock
+						| 회원가입 
+					.form-group
+						label.control-label 닉네임 
+						input.form-control(type="text", name='nickName' placeholder="닉네임")
+					.form-group
+						label.control-label 이메일 
+						input.form-control(type="text", name='email' placeholder="이메일")
+					.form-group
+						label.control-label 암호 
+						input.form-control(type="password", name='pw' placeholder="비밀번호")
+					.form-group.btn-container
+						button.btn.btn-primary.btn-block
+							i.fa.fa-unlock.fa-lg.fa-fw
+							| 회원가입 완료 
+					.form-group.mt-3
+						p.semibold-text.mb-0
+							a(href="#" data-toggle="flip") <i class="fa fa-angle-left fa-fw"></i> 로그인 
+		include ../admin/includes/_javascript.pug
+		block specific-js
+			script(type="text/javascript").
+				// Login Page Flipbox control
+				$('.login-content [data-toggle="flip"]').click(function() {
+					$('.login-box').toggleClass('flipped');
+					return false;
+				});

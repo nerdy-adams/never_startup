@@ -1,0 +1,22 @@
+extends template/_layout.pug
+block title
+  title :: 스타트업쿠 커뮤니티 :: 
+block append cdn
+block append css
+block append script
+block append header
+block main
+  div
+    input(type='text' value=`${board.bdTitle}`)
+  div
+    span= board.bdAuthor
+  div
+    span= board.bdAddDate
+  div= board.bdContent
+    img(src='/public/img/uploads/'+imgNm alt="", srcset="")
+  div
+    a(href=`/board/${board._id}/modify`) 수정
+  div
+    a(href=`/board`) list로
+  div
+    a(href=`/board/${board._id}/delete`) 삭제 

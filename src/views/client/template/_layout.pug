@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    block title
+    block cdn
+      //- jquery.min.js 
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer)
+      //- bootstrap.min.css CDN
+      link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
+      //- bootstrap-theme.min.css CDN
+      link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css")
+      //- //- bootstrap.min.js CDN
+      script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" defer)
+    block css
+      link(rel='stylesheet' type='text/css' href='/public/css/client.css')
+    block script 
+      script(src='/public/js/index.js' defer)
+  body
+    block statebar
+      if(hideNav==false)
+        include ../include/_statebar.pug
+    block header
+      if(hideNav==false)
+        include ../include/_header.pug
+    block main 
+    block footer
+    //- block token
+    //-   include ../include/_getToken.pug

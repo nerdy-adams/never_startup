@@ -1,0 +1,29 @@
+# vim swp file
+*.swp
+
+# .config
+<<<<<<< HEAD
+/.config/*
+=======
+/.config/.database.config.js
+/.config/.nota.config.js
+>>>>>>> 322a7f7db71281c6a9a3617e961510a4be44d8b7
+
+# node
+/node_modules/*
+package-lock.json
+
+# macOS
+.DS_Store
+
+# eslint
+.eslintrc.json
+
+/public/img/uploads/*
+*.bak
+
+# dist
+dist
+
+# gulp
+.gulp-cache

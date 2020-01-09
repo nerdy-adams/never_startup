@@ -1,0 +1,11 @@
+input#token(type='hidden' value=token)
+script.
+  (() => {
+    var token = document.getElementById('token').value;
+    let date = new Date();
+    date.setDate(date.getDate() - 1)
+    if(token) {
+      document.cookie = `token=; expires=${date.toUTCString()}; path=/`;
+      location.href = document.referrer;
+    }
+  })(); 

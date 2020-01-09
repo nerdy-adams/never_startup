@@ -1,0 +1,31 @@
+// ---------------------- //
+// ---- Media Query  ---- //
+// ---------------------- //
+
+
+// --- mediaQuery -- //
+// media-query(
+//   $min-max:string,
+//   $size:string)
+// ){....}
+// $min-max : 'max' , 'min'
+// $size: 'lg','md','sm','s','ms','xs'
+
+@mixin mediaQuery($min-max: true , $size : true) {
+  @if       $min-max == 'min' {
+    @if      $size == 'lg'  {@media(min-width: 1440px)  {@content;}}
+    @else if $size == 'md'  {@media(min-width: 1024px)  {@content;}}
+    @else if $size == 'sm'  {@media(min-width: 768px)   {@content;}}
+    @else if $size == 's'   {@media(min-width: 425px)   {@content;}}
+    @else if $size == 'ms'  {@media(min-width: 375px)   {@content;}}
+    @else if $size == 'xs'  {@media(min-width: 320px)   {@content;}}
+  }
+  @else if  $min-max == 'max' {
+    @if      $size == 'lg'  {@media(max-width: 1399px)  {@content;}}
+    @else if $size == 'md'  {@media(max-width: 1023px)  {@content;}}
+    @else if $size == 'sm'  {@media(max-width: 767px)   {@content;}}
+    @else if $size == 's'   {@media(max-width: 424px)   {@content;}}
+    @else if $size == 'ms'  {@media(max-width: 374px)   {@content;}}
+    @else if $size == 'xs'  {@media(max-width: 319px)   {@content;}}
+  }
+}

@@ -1,0 +1,12 @@
+div.statebar-wrap
+  if(user)
+    a(href="/home") 
+      button.btn 내정보 
+    form(action='auth/logout' , method='get')
+      button.btn(type='submit') 로그아웃 
+    if(user.admin)
+      a(href="/admin") 
+        button.btn 관리자모드
+  if(!user)
+    a(href="/user") 
+      button.btn 로그인

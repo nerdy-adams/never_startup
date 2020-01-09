@@ -1,0 +1,19 @@
+extends template/_layout.pug
+block title
+  title :: 스타트업쿠 커뮤니티 :: 
+block append cdn
+block append css
+block append script
+block main
+  section#main.main-wrap.low
+    div.main-half-box.left-box.col-lg-4.col-md-6.col-sm-12
+      div.main-caption.col-10
+        h1 Here is 
+          a(href='/home')
+            strong.highlight Never Startup 
+        p 네버스타트업 세계에 온 걸 개 환영한다
+    div.main-half-box.right-box.col-lg-8.col-md-6.col-sm-12
+      div.main-caption.col-lg-6.col-md-8.col-sm-6.col-xl-6
+        a(href='/home').go-btn-wrap
+          button.go-board-btn.btn 접속하자! 
+            span.highlight 네버스타트업

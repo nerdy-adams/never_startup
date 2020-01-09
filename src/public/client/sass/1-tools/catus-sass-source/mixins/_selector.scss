@@ -1,0 +1,29 @@
+// ------------------- //
+// ---- Selectors ---- //
+// ------------------- //
+
+// --- selector -- //
+  // --- syntax --- //
+    // selector(
+    //   $seletor:string,
+    // ){....}
+    // $seletor: any 
+@mixin selector($seletor:true){
+  #{$seletor} { @content; }
+}
+
+// --- selectorOneStyle -- //
+  // --- syntax --- //
+    // selectorOneStyle(
+    //   $seletor:string/$this(self selector),
+    //   $key:string)
+    //   $value:string)
+    // ){....}
+    // $seletor: any 
+    // $key: any 
+    // $value: any
+@mixin selectOneStyle($seletor:true , $key:true, $value:true){
+  @if    $seletor == '_this' { #{$key}: #{$value} !important; }
+  @else if $seletor != '_this' { #{$seletor} { #{$key}: #{$value} !important; }}
+}
+

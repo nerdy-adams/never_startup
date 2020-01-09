@@ -1,0 +1,18 @@
+input#token(type='hidden',value=user)
+
+script.
+  getCookie();
+  function getCookie() {
+    const decodedCookie = decodeURIComponent(document.cookie);
+    if(decodedCookie) {
+      const splitNameAndValue = decodedCookie.split('?');
+      const splitKeyAndValue = splitNameAndValue[0].split('=');
+      const key = splitKeyAndValue[0].toString();
+      const value = splitKeyAndValue[1].toString();
+      const token = document.getElementById('token');
+      token.name=key;
+      token.vlaue=value;
+      console.log(`token : ${value} \nkey : ${splitNameAndValue[1]}`)
+    }
+    else console.log(`token : false \nkey : `)
+  };
